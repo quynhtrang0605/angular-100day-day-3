@@ -1,4 +1,21 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+{{ name }}
+
+<!-- {{expression}} -->
+<!-- String Interpolation -->
+<p>{{ user.name }}</p>
+<p>{{ user.age }}</p>
+
+<!-- property binding-->
+<input type="text" [value]="user.name" />
+<!-- hoặc  <input [type]={ {inputType }} value="example"> -->
+<!-- tuy nhiên cách này ít được sử dụng vì bị lộn qua interpolation -->
+
+<!-- event binding -->
+<!-- <button type="button" (click)="handler()">Click me</button> -->
+<br /><br />
+<!-- two-way binding -->
+<!-- Khi gõ vào input thì dòng chữ cũng thay đổi theo -->
+<input type="text" [(ngModel)]="name" (ngModelChange)="name = $event" />
+
+<!-- tương tự sửa cho button -->
+<button type="button" (click)="handler($event)">Click me</button>
